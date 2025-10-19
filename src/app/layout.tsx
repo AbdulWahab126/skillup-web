@@ -1,5 +1,6 @@
 // Third-party Imports
 import 'react-perfect-scrollbar/dist/css/styles.css'
+import { ClerkProvider } from '@clerk/nextjs'
 
 // Type Imports
 import type { ChildrenType } from '@core/types'
@@ -9,7 +10,6 @@ import '@/app/globals.css'
 
 // Generated Icon CSS Imports
 import '@assets/iconify-icons/generated-icons.css'
-import { ClerkProvider } from '@clerk/nextjs'
 
 export const metadata = {
   title: 'Skillup AI | Learn Smarter with Artificial Intelligence',
