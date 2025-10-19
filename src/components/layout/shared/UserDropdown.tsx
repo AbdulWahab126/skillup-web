@@ -7,6 +7,9 @@ import type { MouseEvent } from 'react'
 // Next Imports
 import { useRouter } from 'next/navigation'
 
+// Clerk authentication
+import { useUser, useClerk } from '@clerk/nextjs'
+
 // MUI Imports
 import { styled } from '@mui/material/styles'
 import Badge from '@mui/material/Badge'
@@ -34,12 +37,17 @@ const BadgeContentSpan = styled('span')({
 const UserDropdown = () => {
   // States
   const [open, setOpen] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   // Refs
   const anchorRef = useRef<HTMLDivElement>(null)
 
   // Hooks
   const router = useRouter()
+
+  // Clerk hooks
+  const { user } = useUser()
+  const { signOut } = useClerk()
 
   const handleDropdownOpen = () => {
     !open ? setOpen(true) : setOpen(false)
@@ -57,6 +65,20 @@ const UserDropdown = () => {
     setOpen(false)
   }
 
+  // Handle logout
+  const handleLogout = async () => {
+    try {
+      setLoading(true)
+      await signOut(() => {
+        router.push('/sign-in')
+      })
+    } catch (err) {
+      console.error('Logout failed:', err)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <>
       <Badge
@@ -68,8 +90,8 @@ const UserDropdown = () => {
       >
         <Avatar
           ref={anchorRef}
-          alt='John Doe'
-          src='/images/avatars/1.png'
+          alt={user?.firstName || ''}
+          src={user?.hasImage ? user?.imageUrl : user?.firstName?.[0]}
           onClick={handleDropdownOpen}
           className='cursor-pointer bs-[38px] is-[38px]'
         />
@@ -93,12 +115,11 @@ const UserDropdown = () => {
               <ClickAwayListener onClickAway={e => handleDropdownClose(e as MouseEvent | TouchEvent)}>
                 <MenuList>
                   <div className='flex items-center plb-2 pli-4 gap-2' tabIndex={-1}>
-                    <Avatar alt='John Doe' src='/images/avatars/1.png' />
+                    <Avatar alt={user?.firstName || ''} src={user?.hasImage ? user?.imageUrl : user?.firstName?.[0]} />
                     <div className='flex items-start flex-col'>
                       <Typography className='font-medium' color='text.primary'>
-                        John Doe
+                        {user?.fullName}
                       </Typography>
-                      <Typography variant='caption'>Admin</Typography>
                     </div>
                   </div>
                   <Divider className='mlb-1' />
@@ -110,14 +131,7 @@ const UserDropdown = () => {
                     <i className='ri-settings-4-line' />
                     <Typography color='text.primary'>Settings</Typography>
                   </MenuItem>
-                  <MenuItem className='gap-3' onClick={e => handleDropdownClose(e)}>
-                    <i className='ri-money-dollar-circle-line' />
-                    <Typography color='text.primary'>Pricing</Typography>
-                  </MenuItem>
-                  <MenuItem className='gap-3' onClick={e => handleDropdownClose(e)}>
-                    <i className='ri-question-line' />
-                    <Typography color='text.primary'>FAQ</Typography>
-                  </MenuItem>
+
                   <div className='flex items-center plb-2 pli-4'>
                     <Button
                       fullWidth
@@ -125,10 +139,11 @@ const UserDropdown = () => {
                       color='error'
                       size='small'
                       endIcon={<i className='ri-logout-box-r-line' />}
-                      onClick={e => handleDropdownClose(e, '/login')}
+                      onClick={handleLogout}
+                      disabled={loading}
                       sx={{ '& .MuiButton-endIcon': { marginInlineStart: 1.5 } }}
                     >
-                      Logout
+                      {loading ? 'Logging out...' : 'Logout'}
                     </Button>
                   </div>
                 </MenuList>

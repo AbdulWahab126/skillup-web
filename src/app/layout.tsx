@@ -9,6 +9,7 @@ import '@/app/globals.css'
 
 // Generated Icon CSS Imports
 import '@assets/iconify-icons/generated-icons.css'
+import { ClerkProvider } from '@clerk/nextjs'
 
 export const metadata = {
   title: 'Skillup AI | Learn Smarter with Artificial Intelligence',
@@ -21,9 +22,11 @@ const RootLayout = ({ children }: ChildrenType) => {
   const direction = 'ltr'
 
   return (
-    <html id='__next' dir={direction}>
-      <body className='flex is-full min-bs-full flex-auto flex-col'>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html id='__next' dir={direction}>
+        <body className='flex is-full min-bs-full flex-auto flex-col'>{children}</body>
+      </html>
+    </ClerkProvider>
   )
 }
 

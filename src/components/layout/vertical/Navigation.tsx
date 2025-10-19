@@ -71,6 +71,8 @@ const Navigation = () => {
         {isBreakpointReached && <i className='ri-close-line text-xl' onClick={() => toggleVerticalNav(false)} />}
       </NavHeader>
       <StyledBoxForShadow ref={shadowRef} />
+
+      {/* Sidebar menu */}
       <VerticalMenu scrollMenu={scrollMenu} />
     </VerticalNav>
   )

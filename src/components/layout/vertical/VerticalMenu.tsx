@@ -62,7 +62,7 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
       >
         <MenuSection label='Beta'>
           <MenuItem
-            href={`${process.env.NEXT_PUBLIC_PRO_URL}/apps/email`}
+            href='/all-courses'
             icon={<i className='ri-book-open-line' />} // 📘 All Courses
             // suffix={<Chip label='Pro' size='small' color='primary' variant='tonal' />} // Enable this if you want "Pro" tag.
             // target='_blank' // Enable this if you want to open the page in new window
@@ -71,28 +71,28 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
           </MenuItem>
 
           <MenuItem
-            href={`${process.env.NEXT_PUBLIC_PRO_URL}/apps/chat`}
+            href='/enrolled-courses'
             icon={<i className='ri-graduation-cap-line' />} // 🎓 Enrolled Courses
           >
             Enrolled Courses
           </MenuItem>
 
           <MenuItem
-            href={`${process.env.NEXT_PUBLIC_PRO_URL}/apps/calendar`}
+            href='/assignments'
             icon={<i className='ri-task-line' />} // 📝 Assignments
           >
             Assignments
           </MenuItem>
 
           <MenuItem
-            href={`${process.env.NEXT_PUBLIC_PRO_URL}/apps/kanban`}
+            href='/quizzes'
             icon={<i className='ri-question-answer-line' />} // ❓ Quizzes
           >
             Quizzes
           </MenuItem>
 
           <MenuItem
-            href='/card-basic'
+            href='/how-it-works'
             icon={<i className='ri-information-line' />} // ℹ️ How it works
           >
             How it works?
