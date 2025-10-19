@@ -21,7 +21,7 @@ type VerticalLayoutProps = ChildrenType & {
 
 const VerticalLayout = (props: VerticalLayoutProps) => {
   // Props
-  const { navbar, footer, navigation, children } = props
+  const { navbar, navigation, children } = props // destructure the footer from the props when needed
 
   return (
     <div className={classnames(verticalLayoutClasses.root, 'flex flex-auto')}>
@@ -30,7 +30,7 @@ const VerticalLayout = (props: VerticalLayoutProps) => {
         {navbar || null}
         {/* Content */}
         <LayoutContent>{children}</LayoutContent>
-        {footer || null}
+        {/* {footer || null} */}
       </div>
     </div>
   )
