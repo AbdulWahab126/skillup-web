@@ -70,33 +70,33 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
             All Courses
           </MenuItem>
 
-          <MenuItem
+          {/* <MenuItem
             href='/enrolled-courses'
             icon={<i className='ri-graduation-cap-line' />} // 🎓 Enrolled Courses
           >
             Enrolled Courses
-          </MenuItem>
+          </MenuItem> */}
 
-          <MenuItem
+          {/* <MenuItem
             href='/assignments'
             icon={<i className='ri-task-line' />} // 📝 Assignments
           >
             Assignments
-          </MenuItem>
+          </MenuItem> */}
 
-          <MenuItem
+          {/* <MenuItem
             href='/quizzes'
             icon={<i className='ri-question-answer-line' />} // ❓ Quizzes
           >
             Quizzes
-          </MenuItem>
+          </MenuItem> */}
 
-          <MenuItem
+          {/* <MenuItem
             href='/how-it-works'
             icon={<i className='ri-information-line' />} // ℹ️ How it works
           >
             How it works?
-          </MenuItem>
+          </MenuItem> */}
         </MenuSection>
       </Menu>
     </ScrollWrapper>

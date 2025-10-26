@@ -118,7 +118,7 @@ const UserDropdown = () => {
                     <Avatar alt={user?.firstName || ''} src={user?.hasImage ? user?.imageUrl : user?.firstName?.[0]} />
                     <div className='flex items-start flex-col'>
                       <Typography className='font-medium' color='text.primary'>
-                        {user?.fullName}
+                        {user?.fullName || 'Guest User'}
                       </Typography>
                     </div>
                   </div>
@@ -126,10 +126,6 @@ const UserDropdown = () => {
                   <MenuItem className='gap-3' onClick={e => handleDropdownClose(e)}>
                     <i className='ri-user-3-line' />
                     <Typography color='text.primary'>My Profile</Typography>
-                  </MenuItem>
-                  <MenuItem className='gap-3' onClick={e => handleDropdownClose(e)}>
-                    <i className='ri-settings-4-line' />
-                    <Typography color='text.primary'>Settings</Typography>
                   </MenuItem>
 
                   <div className='flex items-center plb-2 pli-4'>

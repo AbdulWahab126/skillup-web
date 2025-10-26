@@ -82,7 +82,7 @@ const colorSchemes = (): Theme['colorSchemes'] => {
         divider: `rgb(var(--mui-mainColorChannels-light) / 0.12)`,
         dividerChannel: 'var(--mui-mainColorChannels-light)',
         background: {
-          default: skin === 'bordered' ? '#FFFFFF' : '#F4F5FA',
+          default: skin === 'bordered' ? '#FFFFFF' : '#ffffff',
           paper: '#FFFFFF'
         },
         action: {
@@ -154,7 +154,7 @@ const colorSchemes = (): Theme['colorSchemes'] => {
           border: 'var(--mui-palette-divider)'
         },
         customColors: {
-          bodyBg: '#F4F5FA',
+          bodyBg: '#ffffff',
           chatBg: '#F7F6FA',
           greyLightBg: '#FAFAFA',
           inputBorder: `rgb(var(--mui-mainColorChannels-light) / 0.22)`,

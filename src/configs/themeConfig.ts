@@ -20,15 +20,29 @@ export type Config = {
   layoutPadding: number
   compactContentWidth: number
   disableRipple: boolean
+  navbar: {
+    type: 'static' | 'fixed'
+    contentWidth: 'compact' | 'wide'
+    floating: boolean
+    detached: boolean
+    blur: boolean
+  }
 }
 
 const themeConfig: Config = {
-  templateName: 'Skillup',
-  settingsCookieName: 'skillup',
+  templateName: 'Courspy AI',
+  settingsCookieName: 'courspy ai',
   mode: 'light', // 'light', 'dark'
   layoutPadding: 24, // Common padding for header, content, footer layout components (in px)
   compactContentWidth: 1440, // in px
-  disableRipple: false // true, false
+  disableRipple: false, // true, false
+  navbar: {
+    type: 'fixed',
+    contentWidth: 'compact',
+    floating: false,
+    detached: true,
+    blur: true
+  }
 }
 
 export default themeConfig
