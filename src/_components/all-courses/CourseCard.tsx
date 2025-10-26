@@ -1,11 +1,13 @@
 // 'use client'
 
 import Image from 'next/image'
+
+import { Star } from 'lucide-react'
+
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-import { Star } from 'lucide-react'
 
 interface CourseCardProps {
   title: string

@@ -1,5 +1,6 @@
-import CourseCard from '@/_components/all-courses/CourseCard'
 import { Grid, Typography } from '@mui/material'
+
+import CourseCard from '@/_components/all-courses/CourseCard'
 
 const dummyCourses = [
   {
