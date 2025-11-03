@@ -9,7 +9,7 @@ const navigationCustomStyles = (theme: Theme) => {
     color: 'var(--mui-palette-text-primary)',
     zIndex: 'var(--drawer-z-index) !important',
     [`& .${verticalNavClasses.bgColorContainer}`]: {
-      backgroundColor: 'var(--mui-palette-background-default)'
+      backgroundColor: '#4275f6'
     },
     [`& .${verticalNavClasses.header}`]: {
       paddingBlock: theme.spacing(5),

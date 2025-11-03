@@ -34,7 +34,7 @@ const themeConfig: Config = {
   settingsCookieName: 'courspy ai',
   mode: 'light', // 'light', 'dark'
   layoutPadding: 24, // Common padding for header, content, footer layout components (in px)
-  compactContentWidth: 1440, // in px
+  compactContentWidth: 1645, // in px
   disableRipple: false, // true, false
   navbar: {
     type: 'fixed',

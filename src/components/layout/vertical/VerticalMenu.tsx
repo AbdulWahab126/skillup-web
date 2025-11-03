@@ -60,14 +60,14 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
         renderExpandedMenuItemIcon={{ icon: <i className='ri-circle-line' /> }}
         menuSectionStyles={menuSectionStyles(theme)}
       >
-        <MenuSection label='Beta'>
+        <MenuSection label='Beta Features'>
           <MenuItem
-            href='/all-courses'
+            href='/courses'
             icon={<i className='ri-book-open-line' />} // 📘 All Courses
             // suffix={<Chip label='Pro' size='small' color='primary' variant='tonal' />} // Enable this if you want "Pro" tag.
             // target='_blank' // Enable this if you want to open the page in new window
           >
-            All Courses
+            Courses
           </MenuItem>
 
           {/* <MenuItem

@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material'
+import { Grid } from '@mui/material'
 
 import CourseCard from '@/_components/all-courses/CourseCard'
 
@@ -104,13 +104,9 @@ const dummyCourses = [
 const AllCourses = () => {
   return (
     <div>
-      <Typography variant='h3' fontWeight={600} sx={{ color: 'text.primary', mb: 4 }}>
-        Explore All Courses
-      </Typography>
-
       <Grid container spacing={2}>
         {dummyCourses.map((course, i) => (
-          <Grid item xs={12} sm={6} md={4} key={i}>
+          <Grid item xs={12} sm={6} md={3} key={i}>
             <CourseCard {...course} />
           </Grid>
         ))}

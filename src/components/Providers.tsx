@@ -29,7 +29,7 @@ const Providers = async (props: Props) => {
       <SettingsProvider settingsCookie={settingsCookie} mode={mode}>
         <ThemeProvider direction={direction}>
           {children}
-          <UpgradeToProButton />
+          {/* <UpgradeToProButton /> */}
         </ThemeProvider>
       </SettingsProvider>
     </VerticalNavProvider>
