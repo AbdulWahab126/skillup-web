@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 
 // MUI Imports
 import IconButton from '@mui/material/IconButton'
+import { Typography } from '@mui/material'
 
 // Third-party Imports
 import classnames from 'classnames'
@@ -12,11 +13,11 @@ import classnames from 'classnames'
 // Component Imports
 import NavToggle from './NavToggle'
 import UserDropdown from '@components/layout/shared/UserDropdown'
+
 // import NavSearch from '../shared/search'
 
 // Util Imports
 import { verticalLayoutClasses } from '@layouts/utils/layoutClasses'
-import { Typography } from '@mui/material'
 
 const NavbarContent = () => {
   const pathname = usePathname()
@@ -34,6 +35,7 @@ const NavbarContent = () => {
         <Typography variant='h3' fontWeight={600} sx={{ color: 'text.primary' }}>
           {title}
         </Typography>
+
         {/* <NavSearch /> */}
       </div>
       <div className='flex items-center'>

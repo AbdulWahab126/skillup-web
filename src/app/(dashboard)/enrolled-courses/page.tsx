@@ -1,5 +1,5 @@
 const EnrolledCourses = () => {
-  return <h1>Enrolled Courses</h1>
+  return <></>
 }
 
 export default EnrolledCourses

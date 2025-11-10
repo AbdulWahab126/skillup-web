@@ -1,5 +1,4 @@
 // MUI Imports
-import { lighten } from '@mui/material/styles'
 import type { Theme } from '@mui/material/styles'
 
 // Type Imports
@@ -24,16 +23,7 @@ const menuItemStyles = (theme: Theme): MenuItemStyles => {
       },
       [`&:not(.${menuClasses.subMenuRoot}) > .${menuClasses.button}.${menuClasses.active}`]: {
         color: 'var(--mui-palette-primary-contrastText)',
-        background:
-          theme.direction === 'ltr'
-            ? `linear-gradient(270deg, var(--mui-palette-primary-main), ${lighten(
-                theme.palette.primary.main,
-                0.5
-              )} 100%)`
-            : `linear-gradient(270deg, ${lighten(
-                theme.palette.primary.main,
-                0.5
-              )}, var(--mui-palette-primary-main) 100%)`,
+        background: theme.palette.primary.secondary,
         [`& .${menuClasses.icon}`]: {
           color: 'inherit'
         }
@@ -50,7 +40,7 @@ const menuItemStyles = (theme: Theme): MenuItemStyles => {
       borderEndEndRadius: 50,
       ...(!active && {
         '&:hover, &:focus-visible': {
-          backgroundColor: 'var(--mui-palette-action-hover)'
+          backgroundColor: '#312d4b'
         },
         '&[aria-expanded="true"]': {
           backgroundColor: 'var(--mui-palette-action-selected)'

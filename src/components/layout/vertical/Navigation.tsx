@@ -7,7 +7,7 @@ import { useRef } from 'react'
 import Link from 'next/link'
 
 // MUI Imports
-import { styled, useTheme } from '@mui/material/styles'
+import { useTheme } from '@mui/material/styles'
 
 // Component Imports
 import VerticalNav, { NavHeader } from '@menu/vertical-menu'
@@ -19,22 +19,6 @@ import useVerticalNav from '@menu/hooks/useVerticalNav'
 
 // Style Imports
 import navigationCustomStyles from '@core/styles/vertical/navigationCustomStyles'
-
-const StyledBoxForShadow = styled('div')(({ theme }) => ({
-  top: 60,
-  left: -8,
-  zIndex: 2,
-  opacity: 0,
-  position: 'absolute',
-  pointerEvents: 'none',
-  width: 'calc(100% + 15px)',
-  height: theme.mixins.toolbar.minHeight,
-  transition: 'opacity .15s ease-in-out',
-  background: `linear-gradient(var(--mui-palette-background-default) 5%, rgb(var(--mui-palette-background-defaultChannel) / 0.85) 30%, rgb(var(--mui-palette-background-defaultChannel) / 0.5) 65%, rgb(var(--mui-palette-background-defaultChannel) / 0.3) 75%, transparent)`,
-  '&.scrolled': {
-    opacity: 1
-  }
-}))
 
 const Navigation = () => {
   // Hooks
@@ -60,8 +44,6 @@ const Navigation = () => {
   }
 
   return (
-    // eslint-disable-next-line lines-around-comment
-    // Sidebar Vertical Menu
     <VerticalNav customStyles={navigationCustomStyles(theme)}>
       {/* Nav Header including Logo & nav toggle icons  */}
       <NavHeader>
@@ -70,7 +52,6 @@ const Navigation = () => {
         </Link>
         {isBreakpointReached && <i className='ri-close-line text-xl' onClick={() => toggleVerticalNav(false)} />}
       </NavHeader>
-      <StyledBoxForShadow ref={shadowRef} />
 
       {/* Sidebar menu */}
       <VerticalMenu scrollMenu={scrollMenu} />

@@ -5,7 +5,8 @@ import { useTheme } from '@mui/material/styles'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 // Type Imports
-import type { VerticalMenuContextProps } from '@menu/components/vertical-menu/Menu'
+
+// import type { VerticalMenuContextProps } from '@menu/components/vertical-menu/Menu'
 
 // Component Imports
 import { Menu, MenuItem, MenuSection } from '@menu/vertical-menu'
@@ -14,33 +15,33 @@ import { Menu, MenuItem, MenuSection } from '@menu/vertical-menu'
 import useVerticalNav from '@menu/hooks/useVerticalNav'
 
 // Styled Component Imports
-import StyledVerticalNavExpandIcon from '@menu/styles/vertical/StyledVerticalNavExpandIcon'
+
+// import StyledVerticalNavExpandIcon from '@menu/styles/vertical/StyledVerticalNavExpandIcon'
 
 // Style Imports
 import menuItemStyles from '@core/styles/vertical/menuItemStyles'
-import menuSectionStyles from '@core/styles/vertical/menuSectionStyles'
 
-type RenderExpandIconProps = {
-  open?: boolean
-  transitionDuration?: VerticalMenuContextProps['transitionDuration']
-}
+// import menuSectionStyles from '@core/styles/vertical/menuSectionStyles'
 
-const RenderExpandIcon = ({ open, transitionDuration }: RenderExpandIconProps) => (
-  <StyledVerticalNavExpandIcon open={open} transitionDuration={transitionDuration}>
-    <i className='ri-arrow-right-s-line' />
-  </StyledVerticalNavExpandIcon>
-)
+// type RenderExpandIconProps = {
+//   open?: boolean
+//   transitionDuration?: VerticalMenuContextProps['transitionDuration']
+// }
+
+// const RenderExpandIcon = ({ open, transitionDuration }: RenderExpandIconProps) => (
+//   <StyledVerticalNavExpandIcon open={open} transitionDuration={transitionDuration}>
+//     <i className='ri-arrow-right-s-line' />
+//   </StyledVerticalNavExpandIcon>
+// )
 
 const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectScrollbar: boolean) => void }) => {
   // Hooks
   const theme = useTheme()
-  const { isBreakpointReached, transitionDuration } = useVerticalNav()
+  const { isBreakpointReached } = useVerticalNav()
 
   const ScrollWrapper = isBreakpointReached ? 'div' : PerfectScrollbar
 
   return (
-    // eslint-disable-next-line lines-around-comment
-    /* Custom scrollbar instead of browser scroll, remove if you want browser scroll only */
     <ScrollWrapper
       {...(isBreakpointReached
         ? {
@@ -53,14 +54,18 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
           })}
     >
       {/* Incase you also want to scroll NavHeader to scroll with Vertical Menu, remove NavHeader from above and paste it below this comment */}
+
       {/* Vertical Menu */}
       <Menu
         menuItemStyles={menuItemStyles(theme)}
-        renderExpandIcon={({ open }) => <RenderExpandIcon open={open} transitionDuration={transitionDuration} />}
-        renderExpandedMenuItemIcon={{ icon: <i className='ri-circle-line' /> }}
-        menuSectionStyles={menuSectionStyles(theme)}
+
+        // renderExpandIcon={({ open }) => <RenderExpandIcon open={open} transitionDuration={transitionDuration} />}
+
+        // renderExpandedMenuItemIcon={{ icon: <i className='ri-circle-line' /> }}
+
+        // menuSectionStyles={menuSectionStyles(theme)}
       >
-        <MenuSection label='Beta Features'>
+        <MenuSection label=''>
           <MenuItem
             href='/courses'
             icon={<i className='ri-book-open-line' />} // 📘 All Courses
@@ -70,12 +75,12 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
             Courses
           </MenuItem>
 
-          {/* <MenuItem
+          <MenuItem
             href='/enrolled-courses'
             icon={<i className='ri-graduation-cap-line' />} // 🎓 Enrolled Courses
           >
             Enrolled Courses
-          </MenuItem> */}
+          </MenuItem>
 
           {/* <MenuItem
             href='/assignments'
