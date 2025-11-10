@@ -23,6 +23,7 @@ const menuItemStyles = (theme: Theme): MenuItemStyles => {
       },
       [`&:not(.${menuClasses.subMenuRoot}) > .${menuClasses.button}.${menuClasses.active}`]: {
         color: 'var(--mui-palette-primary-contrastText)',
+        //@ts-ignore
         background: theme.palette.primary.secondary,
         [`& .${menuClasses.icon}`]: {
           color: 'inherit'
